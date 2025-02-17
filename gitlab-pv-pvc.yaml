@@ -5,7 +5,7 @@ metadata:
   namespace: gitlab
 spec:
   capacity:
-    storage: 10Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -14,14 +14,14 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gitlab-config-pvc
+  name: gitlab-config
   namespace: gitlab
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 5Gi
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -30,7 +30,7 @@ metadata:
   namespace: gitlab
 spec:
   capacity:
-    storage: 10Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -39,14 +39,14 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gitlab-logs-pvc
+  name: gitlab-logs
   namespace: gitlab
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 5Gi
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -55,7 +55,7 @@ metadata:
   namespace: gitlab
 spec:
   capacity:
-    storage: 20Gi
+    storage: 15Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -64,11 +64,37 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gitlab-data-pvc
+  name: gitlab-data
   namespace: gitlab
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 15Gi
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitlab-runner-config-pv
+  namespace: gitlab
+spec:
+  capacity:
+    storage: 1Gi  # Adjust storage size based on your needs
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/gitlab-runner/config  # Path on the host where config will be stored
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-runner-config
+  namespace: gitlab
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  # Adjust storage size based on your needs
