@@ -66,23 +66,23 @@ Navigate to the gitlab-runner folder and build the image:
 ---
 ## Deployment Instructions
 
-### - Create namespace
+### Create namespace
 Apply the namespace configuration:
 ```bash
   kubectl apply -f gitlab-namespace.yaml
 ```   
-### - Deploy Persistent Volume
+### Deploy Persistent Volume
 Apply the persistent storage configuration:
 ```bash
   kubectl apply -f gitlab-pv-pvc.yaml
 ```   
-### - Deploy Gitlab and Gitlab Runner
+### Deploy Gitlab and Gitlab Runner
 Apply the deployment configuration:
 ```bash
   kubectl apply -f gitlab-deployment.yaml
 ``` 
 
-### - Expose Gitlab Service
+### Expose Gitlab Service
 Apply the service configuration:
 ```bash
   kubectl apply -f gitlab-service.yaml
@@ -150,6 +150,7 @@ gitlab-runner register \
   --token <gitlab_runner_token>
 ``` 
 Follow the prompts to complete the registration process. The configuration will be stored in the `/etc/gitlab/config.toml` file inside the persistent volume.
+---
 
 ## Cleanup Resources
 To delete the resources you created for GitLab, run the following commands:
@@ -159,6 +160,7 @@ kubectl delete -f gitlab-deployment.yaml
 kubectl delete -f gitlab-pv-pvc.yaml
 kubectl delete -f gitlab-namespace.yaml
 ``` 
+---
 
 ## Challenges and Solutions
 
