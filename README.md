@@ -8,21 +8,21 @@ This repository contains all the necessary deployment files to set up GitLab and
 
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
-2. [Repository Structure](#project-structure)
-3. [Clone Repository](#clone-repo)
-4. [Custom Gitlab Runner Setup](#custom-runner)
+2. [Repository Structure](#repository-structure)
+3. [Clone Repository](#clone-repository)
+4. [Custom Gitlab Runner Setup](#custom-gitlab-runner-setup)
 5. [Deployment Instructions](#deployment-instructions)
     - [Create Namespace](#create-namespace)
-    - [Deploy Persistent Volume](#persistent-volume)
-    - [Deploy Gitlab and Gitlab Runner](#gitlab-and-gitlab-runner)
-    - [Expose gitlab Service](#gitlab-service)
+    - [Deploy Persistent Volume](#pdeploy-persistent-volume)
+    - [Deploy Gitlab and Gitlab Runner](#deploy-gitlab-and-gitlab-runner)
+    - [Expose gitlab Service](#expose-gitlab-service)
 6. [Verify Deployment](#verify-deployment)
 7. [Access Gitlab](#access-gitlab)
-8. [Create Variables and Runner](#variable-and-runner)
-9. [Register Gitlab Runner](#register-runner)
-10. [Cleanup Resources](#cleanup-resource)
+8. [Create Variables and Runner](#create-variables-and-runner)
+9. [Register Gitlab Runner](#register-gitlab-runner)
+10. [Cleanup Resources](#cleanup-resources)
 11. [Challenges and Solutions](#challenges-and-solutions)
-12. [Conclusion](#register-runner)
+12. [Conclusion](#conclusion)
 ---
 
 ## Prerequisites
