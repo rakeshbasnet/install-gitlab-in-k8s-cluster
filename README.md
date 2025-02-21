@@ -145,13 +145,13 @@ kubectl exec -it <pod-name> -n gitlab -c <container-name> /bin/bash
 ```  
 Now resgister the runner:
 ```bash
-gitlab-runner register \
-  --url http://<vm-ip>:30085 \
-  --token <gitlab_runner_token>
+    gitlab-runner register \
+    --url http://<vm-ip>:30085 \
+    --token <gitlab_runner_token>
 ``` 
 Follow the prompts to complete the registration process. The configuration will be stored in the `/etc/gitlab/config.toml` file inside the persistent volume.
----
 
+---
 ## Cleanup Resources
 To delete the resources you created for GitLab, run the following commands:
 ```bash
